@@ -112,11 +112,13 @@ public class RobotContainer {
     NamedCommands.registerCommand("Stop coral", new StopCoralCommand(m_coralSubsystem));
     NamedCommands.registerCommand("Grab algae", new GrabAlgaeCommand(m_algaeSubsystem));
     NamedCommands.registerCommand("Stop algae", new StopAlgaeCommand(m_algaeSubsystem));
-    NamedCommands.registerCommand("Stop coral", new StopCoralCommand(m_coralSubsystem));
-    NamedCommands.registerCommand("Stow algae", new StowCommand(m_algaeSubsystem));
-    NamedCommands.registerCommand("Score L1", new ScoreCoralCommand(m_coralSubsystem, false));
-    NamedCommands.registerCommand("Score high", new ScoreCoralCommand(m_coralSubsystem, true));
     */
+    NamedCommands.registerCommand("StopCoral", new StopCoralCommand(m_coralSubsystem));
+    //NamedCommands.registerCommand("Stow algae", new StowCommand(m_algaeSubsystem));
+    
+    NamedCommands.registerCommand("ScoreL1", new ScoreCoralCommand(m_coralSubsystem, false));
+   // NamedCommands.registerCommand("Score high", new ScoreCoralCommand(m_coralSubsystem, true));
+    
 
     CanBridge.runTCP();
 
@@ -205,6 +207,6 @@ public class RobotContainer {
 
   public Command getAutonomousCommand() {
     // An example command will be run in autonomous
-    return drivebase.getAutonomousCommand("MID1");
+    return drivebase.getAutonomousCommand("MID RED");
   }
 }
